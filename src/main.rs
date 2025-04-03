@@ -1,4 +1,8 @@
+mod graphs;
+mod fs;
 use clap::Parser;
+use graphs::{Graph, GraphOptions};
+use fs::FileHandler;
 
 #[derive(Parser, Debug)]
 #[command(version, about)]
@@ -16,10 +20,15 @@ struct Args {
 
 fn main() {
     let args = Args::parse();
-    println!(
-        "Left column size of {}, Right column size of {}, {} times", 
-        &args.left_column_size,
-        &args.right_column_size,
-        &args.generate_n_graphs
-    );
+
+    let options = GraphOptions {
+        left_size: args.left_column_size,
+        right_size: args.right_column_size,
+        edge_chance: 30,
+    };
+
+    for _ in 0..args.generate_n_graphs {
+        let graph = Graph::generate(&options);
+        graph.save();
+    }
 }
