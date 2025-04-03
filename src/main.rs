@@ -15,7 +15,10 @@ struct Args {
     right_column_size: u32,
 
     #[arg(short, long)]
-    generate_n_graphs: u8
+    generate_n_graphs: u8,
+
+    #[arg(short, long)]
+    edge_chance: u8
 }
 
 fn main() {
@@ -24,7 +27,7 @@ fn main() {
     let options = GraphOptions {
         left_size: args.left_column_size,
         right_size: args.right_column_size,
-        edge_chance: 30,
+        edge_chance: args.edge_chance,
     };
 
     for _ in 0..args.generate_n_graphs {
