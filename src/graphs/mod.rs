@@ -9,5 +9,6 @@ pub struct Graph {
 pub struct GraphOptions {
     pub left_size: u32,
     pub right_size: u32,
-    pub edge_chance: u8
+    pub edge_chance: u8,
+    pub balanced_arcs: bool
 }

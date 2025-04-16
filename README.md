@@ -20,17 +20,26 @@ cargo install --git https://github.com/stroogle/Simple-Directed-Hypergraph-Gener
 
 ## Usage 🏃‍♂️
 
-Once installed, you can generate a random directed hypergraph by running the command:
+Once installed, you can generate a random directed hypergraph by running commands
 
+### Example
 ```bash
-graph_gen --left-column-size <LEFT_COLUMN_SIZE> --right-column-size <RIGHT_COLUMN_SIZE> --generate-n-graphs <GENERATE_N_GRAPHS> --edge-chance <EDGE_CHANCE>
+graph_gen -l 200 -r 15 -g 5 balanced
 ```
 
-### Command-line options:
+### Options:
 - `-l, --left-column-size <LEFT_COLUMN_SIZE>`    
 - `-r, --right-column-size <RIGHT_COLUMN_SIZE>` 
-- `-g, --generate-n-graphs <GENERATE_N_GRAPHS>`  
-- `-e, --edge-chance <EDGE_CHANCE>`  
+- `-g, --generate-n-graphs <GENERATE_N_GRAPHS>` 
+  
+### Commands:
+
+#### balanced
+The balanced command generates a graph such that all hyperarcs have 6 unique nodes in both the head and tails sets.
+
+#### random
+The random command generates a graph such that each node has a chance (e) of being a part of each hyperarcs head or tails set. 
+- `-e, --edge-chance <EDGE_CHANCE>`
 
 Example:
 ```bash
