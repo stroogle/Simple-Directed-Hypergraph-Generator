@@ -42,7 +42,7 @@ impl Graph {
         let mut left_to_right: Vec<Vec<u8>> = vec![vec![0; right_size]; left_size];
         let mut right_to_left: Vec<Vec<u8>> = vec![vec![0; left_size]; right_size];
 
-        let balanced_size: usize = 15;
+        let balanced_size: usize = 40;
 
         for hyperarc_index in 0..right_size {
             let (head, tail) = generate_non_coliding_sets(
